@@ -1,0 +1,74 @@
+# NOTE: this workflow has not been executed on a GitHub runner. Its commands were run locally
+# (Linux / Python 3.13, and Windows with Python 3.10 + a StrEnum shim); the Windows/3.11 legs are unverified.
+name: ci
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install (core + dev + mcp; no LLM or tracing extras, no credentials)
+        run: python -m pip install -e ".[dev,mcp]"
+      - name: Lint
+        run: ruff check src tests
+      - name: Format check
+        run: ruff format --check src tests
+      - name: Type check
+        run: mypy
+      - name: Tests
+        run: python -m pytest -o addopts="" -rs
+      - name: Validate datasets
+        run: robot-eval validate-dataset --dataset datasets/benchmark_v0.jsonl datasets/v1/development.jsonl datasets/v1/heldout_test.jsonl
+      - name: Smoke benchmark (pipeline check, not an AI-quality result)
+        run: robot-eval run --dataset datasets/benchmark_v0.jsonl --agent reference --out outputs/ci
+      - name: Regression gate (fails the build if the reference agent regresses on the development set)
+        shell: bash
+        run: |
+          robot-eval run --dataset datasets/v1/development.jsonl --agent reference --out outputs/ci
+          RUN=$(ls -d outputs/ci/*_reference_v1_development | tail -1)
+          robot-eval regression-check --baseline reports/baselines/reference_development.summary.json --candidate "$RUN" --config configs/benchmark.yaml
+
+  core-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install core + dev only (verifies optional extras are really optional)
+        run: python -m pip install -e ".[dev]"
+      - run: python -m pytest -o addopts="" -rs
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # advisory: should not block development
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install -e ".[all]" pip-audit
+      - run: pip-audit

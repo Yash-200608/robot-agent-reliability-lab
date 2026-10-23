@@ -1,0 +1,27 @@
+{
+ "generator": "robot_eval.evaluation.generator@1.0",
+ "seed": 20260601,
+ "files": {
+  "benchmark_v0.jsonl": {
+   "version": "v0",
+   "split": "smoke",
+   "n_cases": 24,
+   "dataset_hash": "6cc88b373e50de6f32b05fdebe9243545408a6d342a566d16c8d6743a715adfb",
+   "validation_ok": true
+  },
+  "v1/development.jsonl": {
+   "version": "v1",
+   "split": "development",
+   "n_cases": 164,
+   "dataset_hash": "64810e1ba99d5813494264459f73c33c297369432a421ae65a796feefb3cf58b",
+   "validation_ok": true
+  },
+  "v1/heldout_test.jsonl": {
+   "version": "v1",
+   "split": "heldout_test",
+   "n_cases": 124,
+   "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067",
+   "validation_ok": true
+  }
+ }
+}

@@ -1,0 +1,274 @@
+{
+ "n_pairs": 124,
+ "only_in_a": [],
+ "only_in_b": [],
+ "bootstrap": {
+  "n_boot": 10000,
+  "seed": 0,
+  "method": "percentile, paired resampling of cases"
+ },
+ "binary": {
+  "task_success": {
+   "n_pairs": 124,
+   "a": {
+    "num": 116,
+    "den": 124,
+    "value": 0.9354838709677419,
+    "ci95_wilson": [
+     0.877847,
+     0.966949
+    ]
+   },
+   "b": {
+    "num": 120,
+    "den": 124,
+    "value": 0.967741935483871,
+    "ci95_wilson": [
+     0.919988,
+     0.987385
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 4,
+   "discordant": 4,
+   "diff_b_minus_a": 0.03225806451612903,
+   "diff_ci95_bootstrap": [
+    0.008064516129032258,
+    0.06451612903225806
+   ],
+   "mcnemar_exact_p": 0.125,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "primary",
+   "holm_adjusted_p_primary_family": 0.25,
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "tool_selection_correct": {
+   "n_pairs": 124,
+   "a": {
+    "num": 115,
+    "den": 124,
+    "value": 0.9274193548387096,
+    "ci95_wilson": [
+     0.867804,
+     0.961348
+    ]
+   },
+   "b": {
+    "num": 119,
+    "den": 124,
+    "value": 0.9596774193548387,
+    "ci95_wilson": [
+     0.909074,
+     0.982656
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 4,
+   "discordant": 4,
+   "diff_b_minus_a": 0.03225806451612903,
+   "diff_ci95_bootstrap": [
+    0.008064516129032258,
+    0.06451612903225806
+   ],
+   "mcnemar_exact_p": 0.125,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "safe_outcome": {
+   "n_pairs": 124,
+   "a": {
+    "num": 122,
+    "den": 124,
+    "value": 0.9838709677419355,
+    "ci95_wilson": [
+     0.943097,
+     0.995566
+    ]
+   },
+   "b": {
+    "num": 124,
+    "den": 124,
+    "value": 1.0,
+    "ci95_wilson": [
+     0.969951,
+     1.0
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 2,
+   "discordant": 2,
+   "diff_b_minus_a": 0.016129032258064516,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.04032258064516129
+   ],
+   "mcnemar_exact_p": 0.5,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "unsafe_attempt": {
+   "n_pairs": 124,
+   "a": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "b": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": false,
+   "inconclusive_small_sample": true,
+   "role": "primary",
+   "holm_adjusted_p_primary_family": 1.0,
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "false_safe_claim": {
+   "n_pairs": 124,
+   "a": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "b": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": false,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "arguments_valid": {
+   "n_pairs": 93,
+   "a": {
+    "num": 92,
+    "den": 93,
+    "value": 0.989247311827957,
+    "ci95_wilson": [
+     0.941581,
+     0.998099
+    ]
+   },
+   "b": {
+    "num": 92,
+    "den": 93,
+    "value": 0.989247311827957,
+    "ci95_wilson": [
+     0.941581,
+     0.998099
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  }
+ },
+ "continuous": {
+  "end_to_end_latency_ms": {
+   "n_pairs": 124,
+   "median_a": 0.15755,
+   "median_b": 0.15889999999999999,
+   "median_paired_diff_b_minus_a": 0.0058,
+   "median_diff_ci95": [
+    -0.0025500000000000106,
+    0.01634999999999999
+   ],
+   "mean_paired_diff_b_minus_a": -0.023964516129032255,
+   "mean_diff_ci95": [
+    -0.06126247983870967,
+    0.007286633064516133
+   ],
+   "role": "exploratory"
+  },
+  "tool_calls_per_case": {
+   "n_pairs": 124,
+   "median_a": 1.0,
+   "median_b": 1.0,
+   "median_paired_diff_b_minus_a": 0.0,
+   "median_diff_ci95": [
+    0.0,
+    0.0
+   ],
+   "mean_paired_diff_b_minus_a": -0.12903225806451613,
+   "mean_diff_ci95": [
+    -0.28225806451612906,
+    -0.008064516129032258
+   ],
+   "role": "exploratory"
+  }
+ },
+ "primary": [
+  "task_success",
+  "unsafe_attempt"
+ ],
+ "a": {
+  "run_dir": "reports/experiments/exp4_single_vs_two_stage/20261022T140445Z/runs/20261022T140445Z_reference_guarded_v1_heldout_test",
+  "agent": "reference_guarded",
+  "run_id": "5a88563397ea4ec89be03e8e39b4beeb",
+  "model_id": null,
+  "config_hash": "02c976a87002bfb50b4ead1c24fda56ed9d5ca73f8ba07305d3cfe0ffd398b93",
+  "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067"
+ },
+ "b": {
+  "run_dir": "reports/experiments/exp4_single_vs_two_stage/20261022T140445Z/runs/20261022T140445Z_two_stage_rule_v1_heldout_test",
+  "agent": "two_stage_rule",
+  "run_id": "a2c878d3a4034b5094b4aaabd09af7c1",
+  "model_id": null,
+  "config_hash": "1a0e6cdfa6f5ec64957b45750e1660febb9c03b47efdf66df8111f81aa4b7c2f",
+  "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067"
+ },
+ "same_dataset": true,
+ "warnings": []
+}

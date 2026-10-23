@@ -1,0 +1,269 @@
+{
+ "n_pairs": 124,
+ "only_in_a": [],
+ "only_in_b": [],
+ "bootstrap": {
+  "n_boot": 10000,
+  "seed": 0,
+  "method": "percentile, paired resampling of cases"
+ },
+ "binary": {
+  "task_success": {
+   "n_pairs": 124,
+   "a": {
+    "num": 115,
+    "den": 124,
+    "value": 0.9274193548387096,
+    "ci95_wilson": [
+     0.867804,
+     0.961348
+    ]
+   },
+   "b": {
+    "num": 115,
+    "den": 124,
+    "value": 0.9274193548387096,
+    "ci95_wilson": [
+     0.867804,
+     0.961348
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "tool_selection_correct": {
+   "n_pairs": 124,
+   "a": {
+    "num": 101,
+    "den": 124,
+    "value": 0.8145161290322581,
+    "ci95_wilson": [
+     0.737028,
+     0.873102
+    ]
+   },
+   "b": {
+    "num": 101,
+    "den": 124,
+    "value": 0.8145161290322581,
+    "ci95_wilson": [
+     0.737028,
+     0.873102
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "safe_outcome": {
+   "n_pairs": 124,
+   "a": {
+    "num": 121,
+    "den": 124,
+    "value": 0.9758064516129032,
+    "ci95_wilson": [
+     0.93128,
+     0.991738
+    ]
+   },
+   "b": {
+    "num": 121,
+    "den": 124,
+    "value": 0.9758064516129032,
+    "ci95_wilson": [
+     0.93128,
+     0.991738
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "unsafe_attempt": {
+   "n_pairs": 124,
+   "a": {
+    "num": 14,
+    "den": 124,
+    "value": 0.11290322580645161,
+    "ci95_wilson": [
+     0.068456,
+     0.180614
+    ]
+   },
+   "b": {
+    "num": 14,
+    "den": 124,
+    "value": 0.11290322580645161,
+    "ci95_wilson": [
+     0.068456,
+     0.180614
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": false,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "false_safe_claim": {
+   "n_pairs": 124,
+   "a": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "b": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": false,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "arguments_valid": {
+   "n_pairs": 102,
+   "a": {
+    "num": 101,
+    "den": 102,
+    "value": 0.9901960784313726,
+    "ci95_wilson": [
+     0.946542,
+     0.998267
+    ]
+   },
+   "b": {
+    "num": 101,
+    "den": 102,
+    "value": 0.9901960784313726,
+    "ci95_wilson": [
+     0.946542,
+     0.998267
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  }
+ },
+ "continuous": {
+  "end_to_end_latency_ms": {
+   "n_pairs": 124,
+   "median_a": 0.15625,
+   "median_b": 0.09825,
+   "median_paired_diff_b_minus_a": -0.049499999999999995,
+   "median_diff_ci95": [
+    -0.07194999999999999,
+    -0.03655
+   ],
+   "mean_paired_diff_b_minus_a": -0.11751290322580644,
+   "mean_diff_ci95": [
+    -0.1644681653225806,
+    -0.07604153225806451
+   ],
+   "role": "exploratory"
+  },
+  "tool_calls_per_case": {
+   "n_pairs": 124,
+   "median_a": 1.0,
+   "median_b": 1.0,
+   "median_paired_diff_b_minus_a": 0.0,
+   "median_diff_ci95": [
+    0.0,
+    0.0
+   ],
+   "mean_paired_diff_b_minus_a": -0.03225806451612903,
+   "mean_diff_ci95": [
+    -0.06451612903225806,
+    -0.008064516129032258
+   ],
+   "role": "exploratory"
+  }
+ },
+ "primary": [],
+ "a": {
+  "run_dir": "reports/experiments/exp3_guard_ablation/20261022T140443Z/runs/20261022T140443Z_reference_v1_heldout_test",
+  "agent": "reference",
+  "run_id": "8a35f3a800d94c41944ea9b40badde66",
+  "model_id": null,
+  "config_hash": "3626a0b397999d697b1de4a0ad3c80a6d7c2992803c27b29e8d9537b281ff511",
+  "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067"
+ },
+ "b": {
+  "run_dir": "reports/experiments/exp3_guard_ablation/20261022T140443Z/runs/20261022T140443Z_reference_validate_only_v1_heldout_test",
+  "agent": "reference_validate_only",
+  "run_id": "9ad6c0c2863b4307988596d5240442a3",
+  "model_id": null,
+  "config_hash": "729e630a28e6fa80797f1905fbd7d00ba45b3ad0eab48cca641345a08244dbaa",
+  "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067"
+ },
+ "same_dataset": true,
+ "warnings": []
+}

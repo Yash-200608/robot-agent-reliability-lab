@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "robot-agent-reliability-lab"
+version = "0.1.0"
+description = "Simulation-only evaluation lab for the reliability of AI agents that call robotics-style tools."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "pydantic>=2.7,<3",
+    "PyYAML>=6.0,<7",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=2.3,<3"]
+llm = ["anthropic>=2.1,<3"]
+tracing = ["langfuse>=5,<6"]
+dev = [
+    "pytest>=9.0.3,<10",
+    "ruff>=0.6",
+    "mypy>=1.10",
+    "types-PyYAML",
+]
+all = ["robot-agent-reliability-lab[mcp,llm,tracing,dev]"]
+
+[project.scripts]
+robot-eval = "robot_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    "mcp: tests that need the optional 'mcp' extra",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+plugins = ["pydantic.mypy"]
+files = ["src/robot_eval"]
+ignore_missing_imports = true

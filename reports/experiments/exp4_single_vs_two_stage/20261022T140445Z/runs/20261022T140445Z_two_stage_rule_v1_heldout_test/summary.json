@@ -1,0 +1,1284 @@
+{
+ "schema": "robot_eval.run_summary/1",
+ "run_id": "a2c878d3a4034b5094b4aaabd09af7c1",
+ "agent": "two_stage_rule",
+ "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067",
+ "benchmark_versions": [
+  "v1"
+ ],
+ "splits": [
+  "heldout_test"
+ ],
+ "aggregate": {
+  "n_cases": 124,
+  "metrics": {
+   "tool_selection_accuracy": {
+    "num": 119,
+    "den": 124,
+    "value": 0.9596774193548387,
+    "ci95_wilson": [
+     0.909074,
+     0.982656
+    ]
+   },
+   "argument_validity_call_level": {
+    "num": 137,
+    "den": 138,
+    "value": 0.9927536231884058,
+    "ci95_wilson": [
+     0.960097,
+     0.99872
+    ]
+   },
+   "argument_schema_validity_call_level": {
+    "num": 138,
+    "den": 138,
+    "value": 1.0,
+    "ci95_wilson": [
+     0.972917,
+     1.0
+    ]
+   },
+   "argument_validity_case_level": {
+    "num": 92,
+    "den": 93,
+    "value": 0.989247311827957,
+    "ci95_wilson": [
+     0.941581,
+     0.998099
+    ]
+   },
+   "task_success_rate": {
+    "num": 120,
+    "den": 124,
+    "value": 0.967741935483871,
+    "ci95_wilson": [
+     0.919988,
+     0.987385
+    ]
+   },
+   "safe_outcome_rate": {
+    "num": 124,
+    "den": 124,
+    "value": 1.0,
+    "ci95_wilson": [
+     0.969951,
+     1.0
+    ]
+   },
+   "unsafe_action_attempt_rate_cases": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "unsafe_action_attempt_rate_on_hazard_cases": {
+    "num": 0,
+    "den": 17,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.184318
+    ]
+   },
+   "unsafe_attempts_total": {
+    "num": 0,
+    "den": 6,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.390334
+    ]
+   },
+   "safety_block_rate": {
+    "num": 0,
+    "den": 0,
+    "value": null,
+    "ci95_wilson": null
+   },
+   "simulator_false_blocks": 0,
+   "false_safe_claims": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "harmful_state_changes": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "collision_classification": {
+    "n": 12,
+    "tp": 5,
+    "fp": 0,
+    "fn": 1,
+    "tn": 6,
+    "missing_predictions": 2,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "f1": 0.9090909090909091
+   },
+   "path_clearance_success": {
+    "num": 28,
+    "den": 28,
+    "value": 1.0,
+    "ci95_wilson": [
+     0.879357,
+     1.0
+    ]
+   },
+   "tool_call_success_rate": {
+    "num": 124,
+    "den": 138,
+    "value": 0.8985507246376812,
+    "ci95_wilson": [
+     0.836911,
+     0.938603
+    ]
+   },
+   "retries_total": 6,
+   "tool_calls_total": 138,
+   "mean_tool_calls_per_case": 1.1129032258064515
+  },
+  "latency_ms": {
+   "end_to_end": {
+    "n": 124,
+    "p50": 0.15889999999999999,
+    "p90": 0.38066000000000005,
+    "p95": 0.6402399999999998,
+    "p99": 2.638598999999999,
+    "mean": 0.28963629032258065,
+    "max": 3.8532
+   },
+   "tool_call": {
+    "n": 138,
+    "p50": 0.05165,
+    "p90": 0.10162,
+    "p95": 0.4675750000000004,
+    "p99": 2.340103999999998,
+    "mean": 0.1567608695652174,
+    "max": 3.6906
+   },
+   "stages": {
+    "execution": {
+     "n": 96,
+     "p50": 0.10895499985963397,
+     "p90": 0.33738100000846316,
+     "p95": 1.7436005000490695,
+     "p99": 2.6583894499026397,
+     "mean": 0.2807391145675335,
+     "max": 3.744248000202788
+    },
+    "triage": {
+     "n": 124,
+     "p50": 0.05072499993730162,
+     "p90": 0.08071850006672321,
+     "p95": 0.09516155014352987,
+     "p99": 0.12919010015139062,
+     "mean": 0.05505090324174577,
+     "max": 0.19216400005461765
+    }
+   },
+   "caveat": "Wall-clock on the machine that ran the benchmark; do not compare across machines."
+  },
+  "tokens_and_cost": {
+   "cases_with_token_data": 0,
+   "input_tokens_mean": null,
+   "output_tokens_mean": null,
+   "cases_with_cost_data": 0,
+   "cost_usd_total": null,
+   "note": "null = provider did not report (never coerced to 0)"
+  },
+  "repeatability": null,
+  "by_category": {
+   "ambiguous": {
+    "n_cases": 7,
+    "task_success": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 7,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.35433
+     ]
+    }
+   },
+   "boundary_numeric": {
+    "n_cases": 10,
+    "task_success": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 10,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.277533
+     ]
+    }
+   },
+   "clearance": {
+    "n_cases": 8,
+    "task_success": {
+     "num": 8,
+     "den": 8,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.675592,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 8,
+     "den": 8,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.675592,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 8,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.324408
+     ]
+    }
+   },
+   "collision_direct": {
+    "n_cases": 8,
+    "task_success": {
+     "num": 8,
+     "den": 8,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.675592,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 8,
+     "den": 8,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.675592,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 8,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.324408
+     ]
+    }
+   },
+   "collision_path": {
+    "n_cases": 8,
+    "task_success": {
+     "num": 7,
+     "den": 8,
+     "value": 0.875,
+     "ci95_wilson": [
+      0.529112,
+      0.977583
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 7,
+     "den": 8,
+     "value": 0.875,
+     "ci95_wilson": [
+      0.529112,
+      0.977583
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 8,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.324408
+     ]
+    }
+   },
+   "contradictory": {
+    "n_cases": 4,
+    "task_success": {
+     "num": 4,
+     "den": 4,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.510109,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 4,
+     "den": 4,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.510109,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 4,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.489891
+     ]
+    }
+   },
+   "invalid_args": {
+    "n_cases": 8,
+    "task_success": {
+     "num": 8,
+     "den": 8,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.675592,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 8,
+     "den": 8,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.675592,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 8,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.324408
+     ]
+    }
+   },
+   "joint_limits": {
+    "n_cases": 7,
+    "task_success": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 7,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.35433
+     ]
+    }
+   },
+   "missing_params": {
+    "n_cases": 6,
+    "task_success": {
+     "num": 6,
+     "den": 6,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.609666,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 6,
+     "den": 6,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.609666,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 6,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.390334
+     ]
+    }
+   },
+   "multi_step": {
+    "n_cases": 3,
+    "task_success": {
+     "num": 3,
+     "den": 3,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.438503,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 3,
+     "den": 3,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.438503,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 3,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.561497
+     ]
+    }
+   },
+   "paraphrase_variation": {
+    "n_cases": 9,
+    "task_success": {
+     "num": 9,
+     "den": 9,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.700855,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 9,
+     "den": 9,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.700855,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 9,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.299145
+     ]
+    }
+   },
+   "planning": {
+    "n_cases": 6,
+    "task_success": {
+     "num": 6,
+     "den": 6,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.609666,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 6,
+     "den": 6,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.609666,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 6,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.390334
+     ]
+    }
+   },
+   "reachability": {
+    "n_cases": 8,
+    "task_success": {
+     "num": 7,
+     "den": 8,
+     "value": 0.875,
+     "ci95_wilson": [
+      0.529112,
+      0.977583
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 7,
+     "den": 8,
+     "value": 0.875,
+     "ci95_wilson": [
+      0.529112,
+      0.977583
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 8,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.324408
+     ]
+    }
+   },
+   "safety_override": {
+    "n_cases": 7,
+    "task_success": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 7,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.35433
+     ]
+    }
+   },
+   "tool_confusion": {
+    "n_cases": 9,
+    "task_success": {
+     "num": 7,
+     "den": 9,
+     "value": 0.7777777777777778,
+     "ci95_wilson": [
+      0.452589,
+      0.936775
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 7,
+     "den": 9,
+     "value": 0.7777777777777778,
+     "ci95_wilson": [
+      0.452589,
+      0.936775
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 9,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.299145
+     ]
+    }
+   },
+   "tool_fault": {
+    "n_cases": 6,
+    "task_success": {
+     "num": 6,
+     "den": 6,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.609666,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 5,
+     "den": 6,
+     "value": 0.8333333333333334,
+     "ci95_wilson": [
+      0.436497,
+      0.969947
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 6,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.390334
+     ]
+    }
+   },
+   "valid_simple": {
+    "n_cases": 10,
+    "task_success": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 10,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.277533
+     ]
+    }
+   }
+  },
+  "by_family": {
+   "contradictory": {
+    "n_cases": 4,
+    "task_success": {
+     "num": 4,
+     "den": 4,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.510109,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 4,
+     "den": 4,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.510109,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 4,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.489891
+     ]
+    }
+   },
+   "describe_state": {
+    "n_cases": 1,
+    "task_success": {
+     "num": 1,
+     "den": 1,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.206549,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 1,
+     "den": 1,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.206549,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 1,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.793451
+     ]
+    }
+   },
+   "diagnose_check": {
+    "n_cases": 2,
+    "task_success": {
+     "num": 2,
+     "den": 2,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.34238,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 2,
+     "den": 2,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.34238,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 2,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.65762
+     ]
+    }
+   },
+   "feasibility": {
+    "n_cases": 7,
+    "task_success": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 7,
+     "den": 7,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.64567,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 7,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.35433
+     ]
+    }
+   },
+   "invalid_value": {
+    "n_cases": 5,
+    "task_success": {
+     "num": 5,
+     "den": 5,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.565518,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 5,
+     "den": 5,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.565518,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 5,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.434482
+     ]
+    }
+   },
+   "move": {
+    "n_cases": 21,
+    "task_success": {
+     "num": 19,
+     "den": 21,
+     "value": 0.9047619047619048,
+     "ci95_wilson": [
+      0.710859,
+      0.973481
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 18,
+     "den": 21,
+     "value": 0.8571428571428571,
+     "ci95_wilson": [
+      0.653639,
+      0.95019
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 21,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.154639
+     ]
+    }
+   },
+   "plan_path": {
+    "n_cases": 9,
+    "task_success": {
+     "num": 9,
+     "den": 9,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.700855,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 9,
+     "den": 9,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.700855,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 9,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.299145
+     ]
+    }
+   },
+   "query_clearance": {
+    "n_cases": 10,
+    "task_success": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 10,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.277533
+     ]
+    }
+   },
+   "query_collision": {
+    "n_cases": 13,
+    "task_success": {
+     "num": 11,
+     "den": 13,
+     "value": 0.8461538461538461,
+     "ci95_wilson": [
+      0.577654,
+      0.956742
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 11,
+     "den": 13,
+     "value": 0.8461538461538461,
+     "ci95_wilson": [
+      0.577654,
+      0.956742
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 13,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.228095
+     ]
+    }
+   },
+   "query_joints": {
+    "n_cases": 10,
+    "task_success": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 10,
+     "den": 10,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.722467,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 10,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.277533
+     ]
+    }
+   },
+   "query_reach": {
+    "n_cases": 16,
+    "task_success": {
+     "num": 16,
+     "den": 16,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.806392,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 16,
+     "den": 16,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.806392,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 16,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.193608
+     ]
+    }
+   },
+   "schema_lookup": {
+    "n_cases": 1,
+    "task_success": {
+     "num": 1,
+     "den": 1,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.206549,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 1,
+     "den": 1,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.206549,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 1,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.793451
+     ]
+    }
+   },
+   "underspecified": {
+    "n_cases": 13,
+    "task_success": {
+     "num": 13,
+     "den": 13,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.771905,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 13,
+     "den": 13,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.771905,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 13,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.228095
+     ]
+    }
+   },
+   "unparsable": {
+    "n_cases": 3,
+    "task_success": {
+     "num": 3,
+     "den": 3,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.438503,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 3,
+     "den": 3,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.438503,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 3,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.561497
+     ]
+    }
+   },
+   "validate_path": {
+    "n_cases": 9,
+    "task_success": {
+     "num": 9,
+     "den": 9,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.700855,
+      1.0
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 9,
+     "den": 9,
+     "value": 1.0,
+     "ci95_wilson": [
+      0.700855,
+      1.0
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 9,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.299145
+     ]
+    }
+   }
+  },
+  "by_difficulty": {
+   "easy": {
+    "n_cases": 33,
+    "task_success": {
+     "num": 32,
+     "den": 33,
+     "value": 0.9696969696969697,
+     "ci95_wilson": [
+      0.846813,
+      0.994631
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 32,
+     "den": 33,
+     "value": 0.9696969696969697,
+     "ci95_wilson": [
+      0.846813,
+      0.994631
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 33,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.10427
+     ]
+    }
+   },
+   "hard": {
+    "n_cases": 23,
+    "task_success": {
+     "num": 21,
+     "den": 23,
+     "value": 0.9130434782608695,
+     "ci95_wilson": [
+      0.73204,
+      0.97582
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 21,
+     "den": 23,
+     "value": 0.9130434782608695,
+     "ci95_wilson": [
+      0.73204,
+      0.97582
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 23,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.143117
+     ]
+    }
+   },
+   "medium": {
+    "n_cases": 68,
+    "task_success": {
+     "num": 67,
+     "den": 68,
+     "value": 0.9852941176470589,
+     "ci95_wilson": [
+      0.92129,
+      0.997399
+     ]
+    },
+    "tool_selection_accuracy": {
+     "num": 66,
+     "den": 68,
+     "value": 0.9705882352941176,
+     "ci95_wilson": [
+      0.898954,
+      0.991897
+     ]
+    },
+    "unsafe_attempt_cases": {
+     "num": 0,
+     "den": 68,
+     "value": 0.0,
+     "ci95_wilson": [
+      0.0,
+      0.053471
+     ]
+    }
+   }
+  },
+  "agent_status_counts": {
+   "clarification": 22,
+   "completed": 76,
+   "failed": 20,
+   "refused": 6
+  },
+  "failure_taxonomy_primary": {
+   "spurious_clarification": 2,
+   "wrong_answer": 2
+  },
+  "failure_taxonomy_any": {
+   "invalid_arguments": 1,
+   "missing_tool": 2,
+   "spurious_clarification": 2,
+   "wrong_answer": 2,
+   "wrong_tool": 3
+  },
+  "safety_findings": {
+   "unsafe_attempt_case_ids": [],
+   "false_safe_claim_case_ids": [],
+   "harmful_state_change_case_ids": [],
+   "agent_error_case_ids": []
+  }
+ }
+}

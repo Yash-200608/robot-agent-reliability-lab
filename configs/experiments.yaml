@@ -1,0 +1,74 @@
+# Experiments from the implementation plan (section 12). Run with:
+#   robot-eval experiment --name exp3_guard_ablation --out reports/experiments
+# Each experiment writes: raw per-run directories (cases.jsonl, summary.json, metadata.json, events.jsonl,
+# report.md), comparison.json/.md for every comparison, regression results, experiment.json (versions,
+# command, hashes) and experiment_report.md. Nothing is overwritten: each execution gets its own timestamp.
+experiments:
+  exp0_pipeline:
+    description: "Pipeline correctness: the 24-case smoke suite. A software check, NOT an AI-quality result."
+    runs:
+      - {id: smoke_reference, dataset: datasets/benchmark_v0.jsonl, agent: reference}
+      - {id: smoke_reference_guarded, dataset: datasets/benchmark_v0.jsonl, agent: reference_guarded}
+      - {id: smoke_reference_mcp, dataset: datasets/benchmark_v0.jsonl, agent: reference_guarded, transport: mcp, optional: true}
+    limitations:
+      - "24 hand-designed cases; says nothing about generalisation."
+
+  exp1_dataset_audit:
+    description: "Dataset audit: composition, balance, duplicates, cross-split leakage, oracle re-validation."
+    audit: {datasets: [datasets/v1/development.jsonl, datasets/v1/heldout_test.jsonl]}
+    limitations:
+      - "Audit checks internal consistency and wording overlap; it cannot establish representativeness."
+
+  exp2_reference_baseline:
+    description: "Deterministic reference agent on the development and held-out splits, with failure taxonomy."
+    runs:
+      - {id: dev_reference, dataset: datasets/v1/development.jsonl, agent: reference}
+      - {id: heldout_reference, dataset: datasets/v1/heldout_test.jsonl, agent: reference}
+    limitations:
+      - "The reference agent is a transparent keyword baseline written by the same author as the dataset."
+      - "Held-out here means held out from tuning, not from the author's knowledge of the wording."
+
+  exp3_guard_ablation:
+    description: "RQ2: unguarded baseline vs guarded configuration (confirmatory) plus single-component ablations (exploratory), held-out split."
+    runs:
+      - {id: baseline, dataset: datasets/v1/heldout_test.jsonl, agent: reference}
+      - {id: guarded, dataset: datasets/v1/heldout_test.jsonl, agent: reference_guarded}
+      - {id: validate_only, dataset: datasets/v1/heldout_test.jsonl, agent: reference_validate_only}
+      - {id: verify_only, dataset: datasets/v1/heldout_test.jsonl, agent: reference_verify_only}
+      - {id: refuse_only, dataset: datasets/v1/heldout_test.jsonl, agent: reference_refuse_only}
+    comparisons:
+      - {a: baseline, b: guarded, role: confirmatory, primary: [task_success, unsafe_attempt]}
+      - {a: baseline, b: validate_only, role: exploratory, primary: []}
+      - {a: baseline, b: verify_only, role: exploratory, primary: []}
+      - {a: baseline, b: refuse_only, role: exploratory, primary: []}
+    limitations:
+      - "The simulator rejects every unsafe move in BOTH conditions; the guard changes what is attempted, not what is executed."
+      - "Both conditions are rule-based; the result characterises these rules, not LLM agents."
+
+  exp4_single_vs_two_stage:
+    description: "RQ3: single-stage vs triage->execution. Offline rule backend (not an LLM) always; LLM pair only if credentials exist."
+    runs:
+      - {id: single_rule, dataset: datasets/v1/heldout_test.jsonl, agent: reference_guarded}
+      - {id: two_stage_rule, dataset: datasets/v1/heldout_test.jsonl, agent: two_stage_rule}
+      - {id: single_llm, dataset: datasets/v1/heldout_test.jsonl, agent: llm_single, repeats: 3, optional: true}
+      - {id: two_stage_llm, dataset: datasets/v1/heldout_test.jsonl, agent: llm_two_stage, repeats: 3, optional: true}
+    comparisons:
+      - {a: single_rule, b: two_stage_rule, role: confirmatory, primary: [task_success, unsafe_attempt]}
+      - {a: single_llm, b: two_stage_llm, role: confirmatory, primary: [task_success, unsafe_attempt], optional: true}
+    limitations:
+      - "The rule-backend comparison differs by construction (the triage rules add contradiction detection); it demonstrates the orchestration pipeline, not a finding about LLMs."
+      - "LLM runs are skipped (not simulated) when no credentials/model are configured."
+
+  exp5_regression:
+    description: "RQ4: detect an injected, documented regression; negative control must pass."
+    runs:
+      - {id: baseline, dataset: datasets/v1/development.jsonl, agent: reference}
+      - {id: baseline_repeat, dataset: datasets/v1/development.jsonl, agent: reference}
+      - {id: regressed, dataset: datasets/v1/development.jsonl, agent: reference_regressed}
+    comparisons:
+      - {a: baseline, b: regressed, role: exploratory, primary: [task_success]}
+    regressions:
+      - {baseline: baseline, candidate: baseline_repeat, expect: pass}
+      - {baseline: baseline, candidate: regressed, expect: fail}
+    limitations:
+      - "The regression is injected into a test fixture; this shows detection works for that failure, not general sensitivity."

@@ -1,0 +1,72 @@
+{
+ "schema": "robot_eval.run_metadata/1",
+ "run_id": "a2c878d3a4034b5094b4aaabd09af7c1",
+ "status": "completed",
+ "started_at": "2026-10-22T14:04:45.750+00:00",
+ "command": "robot-eval experiment --name exp4_single_vs_two_stage --out reports/experiments",
+ "label": "two_stage_rule",
+ "agent": {
+  "name": "two_stage_rule",
+  "version": "1.0",
+  "model_id": null,
+  "is_test_fixture": false,
+  "config": {
+   "type": "two_stage_rule",
+   "stages": [
+    "triage",
+    "execution"
+   ],
+   "guards": {
+    "validate_args": true,
+    "verify": true,
+    "refuse_overrides": true
+   },
+   "max_retries": 1,
+   "llm": false
+  },
+  "config_hash": "1a0e6cdfa6f5ec64957b45750e1660febb9c03b47efdf66df8111f81aa4b7c2f"
+ },
+ "dataset": {
+  "path": "datasets/v1/heldout_test.jsonl",
+  "benchmark_versions": [
+   "v1"
+  ],
+  "splits": [
+   "heldout_test"
+  ],
+  "n_cases": 124,
+  "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067",
+  "file_sha256": "f28e087d3aabf4d68a97bb0aa7cff52cd9390ebaa353d6864c05ca407e4d6e73",
+  "worlds_sha256": "c18cb972af6510a3122cda29300623ae2dbbe41a5cce7cb98905a6fc5c735c9f"
+ },
+ "code": {
+  "package_version": "0.1.0",
+  "source_sha256": "88f5e8001f4d8c749af47010be4e0908a7d9869fef25b8f1eaf07adbe706b09a"
+ },
+ "environment": {
+  "python": "3.13.16",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "packages": {
+   "pydantic": "2.14.1",
+   "numpy": "2.5.4",
+   "PyYAML": "6.0.3",
+   "mcp": "2.3.0",
+   "anthropic": "2.1.0",
+   "langfuse": "5.0.4"
+  }
+ },
+ "transport": "direct",
+ "seed": 0,
+ "repeats": 1,
+ "limits": {
+  "max_tool_calls": 40,
+  "max_case_seconds": 120.0
+ },
+ "tracing": {
+  "exporter": "none",
+  "status": "disabled",
+  "flush": "ok"
+ },
+ "completed_at": "2026-10-22T14:04:45.882+00:00"
+}

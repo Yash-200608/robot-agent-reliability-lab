@@ -1,0 +1,69 @@
+{
+ "schema": "robot_eval.run_metadata/1",
+ "run_id": "3a0dbf9e840d4caaa0c24e4335c5c7bb",
+ "status": "completed",
+ "started_at": "2026-10-22T14:04:40.963+00:00",
+ "command": "robot-eval experiment --name exp0_pipeline --out reports/experiments",
+ "label": "smoke_reference_guarded",
+ "agent": {
+  "name": "reference_guarded",
+  "version": "1.0",
+  "model_id": null,
+  "is_test_fixture": false,
+  "config": {
+   "type": "reference",
+   "guards": {
+    "validate_args": true,
+    "verify": true,
+    "refuse_overrides": true
+   },
+   "max_retries": 1,
+   "regress": null,
+   "llm": false
+  },
+  "config_hash": "02c976a87002bfb50b4ead1c24fda56ed9d5ca73f8ba07305d3cfe0ffd398b93"
+ },
+ "dataset": {
+  "path": "datasets/benchmark_v0.jsonl",
+  "benchmark_versions": [
+   "v0"
+  ],
+  "splits": [
+   "smoke"
+  ],
+  "n_cases": 24,
+  "dataset_hash": "6cc88b373e50de6f32b05fdebe9243545408a6d342a566d16c8d6743a715adfb",
+  "file_sha256": "0f8b5b3419aee432494dac3eb88644b6bc94fa95e3464aa0c45984b7e1ee074d",
+  "worlds_sha256": "c18cb972af6510a3122cda29300623ae2dbbe41a5cce7cb98905a6fc5c735c9f"
+ },
+ "code": {
+  "package_version": "0.1.0",
+  "source_sha256": "88f5e8001f4d8c749af47010be4e0908a7d9869fef25b8f1eaf07adbe706b09a"
+ },
+ "environment": {
+  "python": "3.13.16",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "packages": {
+   "pydantic": "2.14.1",
+   "numpy": "2.5.4",
+   "PyYAML": "6.0.3",
+   "mcp": "2.3.0",
+   "anthropic": "2.1.0",
+   "langfuse": "5.0.4"
+  }
+ },
+ "transport": "direct",
+ "seed": 0,
+ "repeats": 1,
+ "limits": {
+  "max_tool_calls": 40,
+  "max_case_seconds": 120.0
+ },
+ "tracing": {
+  "exporter": "none",
+  "status": "disabled",
+  "flush": "ok"
+ },
+ "completed_at": "2026-10-22T14:04:40.986+00:00"
+}

@@ -1,0 +1,104 @@
+{
+ "worlds_file": "datasets/worlds.json",
+ "files": {
+  "datasets/benchmark_v0.jsonl": {
+   "dataset_hash": "6cc88b373e50de6f32b05fdebe9243545408a6d342a566d16c8d6743a715adfb",
+   "splits": [
+    "smoke"
+   ],
+   "benchmark_versions": [
+    "v0"
+   ],
+   "validation": {
+    "path": "datasets/benchmark_v0.jsonl",
+    "n_cases": 24,
+    "ok": true,
+    "errors": [],
+    "warnings": []
+   },
+   "composition": {
+    "n_cases": 24,
+    "by_category": {
+     "smoke": 24
+    },
+    "by_family": {
+     "describe_state": 1,
+     "diagnose_check": 1,
+     "feasibility": 2,
+     "move": 3,
+     "plan_path": 2,
+     "query_clearance": 3,
+     "query_collision": 3,
+     "query_joints": 3,
+     "query_reach": 3,
+     "schema_lookup": 1,
+     "validate_path": 2
+    },
+    "by_difficulty": {
+     "easy": 24
+    },
+    "by_world": {
+     "cell_a": 15,
+     "cell_b": 3,
+     "cell_c": 2,
+     "cell_open": 4
+    },
+    "by_expected_outcome": {
+     "success": 23,
+     "task_failure": 1
+    },
+    "by_safety_label": {
+     "hazard": 1,
+     "none": 7,
+     "safety_query": 16
+    },
+    "by_source_type": {
+     "templated": 24
+    },
+    "faulted_cases": 0,
+    "stress_categories_count": 0,
+    "stress_categories_share": 0.0,
+    "boolean_answer_polarity": {
+     "reachable": {
+      "true": 2,
+      "false": 1
+     },
+     "collides": {
+      "true": 1,
+      "false": 2
+     },
+     "clearance_ok": {
+      "true": 2,
+      "false": 1
+     },
+     "within_limits": {
+      "true": 2,
+      "false": 1
+     },
+     "path_found": {
+      "true": 2,
+      "false": 0
+     },
+     "path_valid": {
+      "true": 1,
+      "false": 1
+     },
+     "feasible": {
+      "true": 2,
+      "false": 0
+     }
+    },
+    "unsafe_move_cases": 1,
+    "hard_share": 0.0
+   },
+   "duplicates_within_file": {
+    "n_unique_normalized_prompts": 24,
+    "n_unique_skeletons": 21,
+    "skeleton_reuse": "templated cases share a skeleton and differ in numbers",
+    "near_duplicate_skeleton_pairs_ge_0.80": 0,
+    "examples": []
+   }
+  }
+ },
+ "all_valid": true
+}

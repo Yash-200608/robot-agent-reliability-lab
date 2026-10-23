@@ -1,0 +1,269 @@
+{
+ "n_pairs": 124,
+ "only_in_a": [],
+ "only_in_b": [],
+ "bootstrap": {
+  "n_boot": 10000,
+  "seed": 0,
+  "method": "percentile, paired resampling of cases"
+ },
+ "binary": {
+  "task_success": {
+   "n_pairs": 124,
+   "a": {
+    "num": 115,
+    "den": 124,
+    "value": 0.9274193548387096,
+    "ci95_wilson": [
+     0.867804,
+     0.961348
+    ]
+   },
+   "b": {
+    "num": 115,
+    "den": 124,
+    "value": 0.9274193548387096,
+    "ci95_wilson": [
+     0.867804,
+     0.961348
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "tool_selection_correct": {
+   "n_pairs": 124,
+   "a": {
+    "num": 101,
+    "den": 124,
+    "value": 0.8145161290322581,
+    "ci95_wilson": [
+     0.737028,
+     0.873102
+    ]
+   },
+   "b": {
+    "num": 107,
+    "den": 124,
+    "value": 0.8629032258064516,
+    "ci95_wilson": [
+     0.791387,
+     0.91261
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 6,
+   "discordant": 6,
+   "diff_b_minus_a": 0.04838709677419355,
+   "diff_ci95_bootstrap": [
+    0.016129032258064516,
+    0.08870967741935484
+   ],
+   "mcnemar_exact_p": 0.03125,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "safe_outcome": {
+   "n_pairs": 124,
+   "a": {
+    "num": 121,
+    "den": 124,
+    "value": 0.9758064516129032,
+    "ci95_wilson": [
+     0.93128,
+     0.991738
+    ]
+   },
+   "b": {
+    "num": 121,
+    "den": 124,
+    "value": 0.9758064516129032,
+    "ci95_wilson": [
+     0.93128,
+     0.991738
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "unsafe_attempt": {
+   "n_pairs": 124,
+   "a": {
+    "num": 14,
+    "den": 124,
+    "value": 0.11290322580645161,
+    "ci95_wilson": [
+     0.068456,
+     0.180614
+    ]
+   },
+   "b": {
+    "num": 8,
+    "den": 124,
+    "value": 0.06451612903225806,
+    "ci95_wilson": [
+     0.033051,
+     0.122153
+    ]
+   },
+   "a_only_positive": 6,
+   "b_only_positive": 0,
+   "discordant": 6,
+   "diff_b_minus_a": -0.04838709677419355,
+   "diff_ci95_bootstrap": [
+    -0.08870967741935484,
+    -0.016129032258064516
+   ],
+   "mcnemar_exact_p": 0.03125,
+   "higher_is_better": false,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "false_safe_claim": {
+   "n_pairs": 124,
+   "a": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "b": {
+    "num": 0,
+    "den": 124,
+    "value": 0.0,
+    "ci95_wilson": [
+     0.0,
+     0.030049
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": false,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  },
+  "arguments_valid": {
+   "n_pairs": 100,
+   "a": {
+    "num": 95,
+    "den": 100,
+    "value": 0.95,
+    "ci95_wilson": [
+     0.88825,
+     0.978456
+    ]
+   },
+   "b": {
+    "num": 95,
+    "den": 100,
+    "value": 0.95,
+    "ci95_wilson": [
+     0.88825,
+     0.978456
+    ]
+   },
+   "a_only_positive": 0,
+   "b_only_positive": 0,
+   "discordant": 0,
+   "diff_b_minus_a": 0.0,
+   "diff_ci95_bootstrap": [
+    0.0,
+    0.0
+   ],
+   "mcnemar_exact_p": 1.0,
+   "higher_is_better": true,
+   "inconclusive_small_sample": true,
+   "role": "exploratory",
+   "reading": "inconclusive: fewer than 10 discordant pairs or 30 pairs; no significance claim is made"
+  }
+ },
+ "continuous": {
+  "end_to_end_latency_ms": {
+   "n_pairs": 124,
+   "median_a": 0.15625,
+   "median_b": 0.1481,
+   "median_paired_diff_b_minus_a": -0.011049999999999997,
+   "median_diff_ci95": [
+    -0.0293,
+    0.0034000000000000002
+   ],
+   "mean_paired_diff_b_minus_a": -0.07035403225806451,
+   "mean_diff_ci95": [
+    -0.11358733870967741,
+    -0.032815524193548405
+   ],
+   "role": "exploratory"
+  },
+  "tool_calls_per_case": {
+   "n_pairs": 124,
+   "median_a": 1.0,
+   "median_b": 1.0,
+   "median_paired_diff_b_minus_a": 0.0,
+   "median_diff_ci95": [
+    0.0,
+    0.0
+   ],
+   "mean_paired_diff_b_minus_a": -0.04838709677419355,
+   "mean_diff_ci95": [
+    -0.08870967741935484,
+    -0.016129032258064516
+   ],
+   "role": "exploratory"
+  }
+ },
+ "primary": [],
+ "a": {
+  "run_dir": "reports/experiments/exp3_guard_ablation/20261022T140443Z/runs/20261022T140443Z_reference_v1_heldout_test",
+  "agent": "reference",
+  "run_id": "8a35f3a800d94c41944ea9b40badde66",
+  "model_id": null,
+  "config_hash": "3626a0b397999d697b1de4a0ad3c80a6d7c2992803c27b29e8d9537b281ff511",
+  "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067"
+ },
+ "b": {
+  "run_dir": "reports/experiments/exp3_guard_ablation/20261022T140443Z/runs/20261022T140444Z_reference_refuse_only_v1_heldout_test",
+  "agent": "reference_refuse_only",
+  "run_id": "1201a769d6b94b5598c8386d4debf4e5",
+  "model_id": null,
+  "config_hash": "5582ff79fe517d07ec8b677305076d38c39051830e7b9d4e31599311823c7466",
+  "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067"
+ },
+ "same_dataset": true,
+ "warnings": []
+}

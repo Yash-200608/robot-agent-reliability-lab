@@ -1,0 +1,69 @@
+{
+ "schema": "robot_eval.run_metadata/1",
+ "run_id": "75f650eb5ae3475e8fd51e17d20689da",
+ "status": "completed",
+ "started_at": "2026-10-22T14:04:47.911+00:00",
+ "command": "robot-eval experiment --name exp5_regression --out reports/experiments",
+ "label": "baseline",
+ "agent": {
+  "name": "reference",
+  "version": "1.0",
+  "model_id": null,
+  "is_test_fixture": false,
+  "config": {
+   "type": "reference",
+   "guards": {
+    "validate_args": false,
+    "verify": false,
+    "refuse_overrides": false
+   },
+   "max_retries": 1,
+   "regress": null,
+   "llm": false
+  },
+  "config_hash": "3626a0b397999d697b1de4a0ad3c80a6d7c2992803c27b29e8d9537b281ff511"
+ },
+ "dataset": {
+  "path": "datasets/v1/development.jsonl",
+  "benchmark_versions": [
+   "v1"
+  ],
+  "splits": [
+   "development"
+  ],
+  "n_cases": 164,
+  "dataset_hash": "64810e1ba99d5813494264459f73c33c297369432a421ae65a796feefb3cf58b",
+  "file_sha256": "9a793651aec1562c6fe12dc11649e14da399a30651ab7b32db706b6869046660",
+  "worlds_sha256": "c18cb972af6510a3122cda29300623ae2dbbe41a5cce7cb98905a6fc5c735c9f"
+ },
+ "code": {
+  "package_version": "0.1.0",
+  "source_sha256": "88f5e8001f4d8c749af47010be4e0908a7d9869fef25b8f1eaf07adbe706b09a"
+ },
+ "environment": {
+  "python": "3.13.16",
+  "platform": "Linux",
+  "machine": "x86_64",
+  "packages": {
+   "pydantic": "2.14.1",
+   "numpy": "2.5.4",
+   "PyYAML": "6.0.3",
+   "mcp": "2.3.0",
+   "anthropic": "2.1.0",
+   "langfuse": "5.0.4"
+  }
+ },
+ "transport": "direct",
+ "seed": 0,
+ "repeats": 1,
+ "limits": {
+  "max_tool_calls": 40,
+  "max_case_seconds": 120.0
+ },
+ "tracing": {
+  "exporter": "none",
+  "status": "disabled",
+  "flush": "ok"
+ },
+ "completed_at": "2026-10-22T14:04:48.092+00:00"
+}

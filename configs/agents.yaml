@@ -1,0 +1,76 @@
+# Agent configurations. Select with: robot-eval run --agent <name> --config configs/agents.yaml
+# Deterministic agents need no credentials. LLM agents are optional (see docs/architecture.md).
+agents:
+  # --- Agent A: deterministic keyword/regex baseline (NOT an LLM, NOT an upper bound) -----------
+  reference:
+    type: reference
+    description: Unguarded single-stage baseline. Simulator hard constraints still apply.
+    guards: {validate_args: false, verify: false, refuse_overrides: false}
+    max_retries: 1
+
+  # RQ2 guarded condition: all three guard components on.
+  reference_guarded:
+    type: reference
+    description: Baseline plus client-side argument validation, pre/post verification, override refusal.
+    guards: {validate_args: true, verify: true, refuse_overrides: true}
+    max_retries: 1
+
+  # Exploratory single-component ablations of the guard.
+  reference_validate_only:
+    type: reference
+    guards: {validate_args: true, verify: false, refuse_overrides: false}
+    max_retries: 1
+  reference_verify_only:
+    type: reference
+    guards: {validate_args: false, verify: true, refuse_overrides: false}
+    max_retries: 1
+  reference_refuse_only:
+    type: reference
+    guards: {validate_args: false, verify: false, refuse_overrides: true}
+    max_retries: 1
+
+  # Experiment 5 fixture: the same agent with one injected, documented regression
+  # (clearance questions are routed to the collision tool).
+  reference_regressed:
+    type: reference
+    description: TEST FIXTURE. Reference with an injected clearance->collision routing regression.
+    guards: {validate_args: false, verify: false, refuse_overrides: false}
+    max_retries: 1
+    regress: clearance_as_collision
+
+  # --- Agent D (offline rule backend): triage -> execution with the same guards as the guarded agent
+  two_stage_rule:
+    type: two_stage_rule
+    description: Rule-based triage stage + guarded rule executor. Not an LLM.
+    guards: {validate_args: true, verify: true, refuse_overrides: true}
+    max_retries: 1
+
+  # --- Agent C / D (optional, need the `llm` extra and ANTHROPIC_API_KEY) -------------------------
+  llm_single:
+    type: llm
+    mode: single
+    provider: anthropic
+    model_env: ROBOT_EVAL_LLM_MODEL     # model id is read from this environment variable
+    # NOTE: no temperature/top_p/top_k - current Messages API versions reject them (HTTP 400).
+    # Reproducibility therefore relies on repeated runs, not sampling parameters (docs/limitations).
+    effort: null                         # optional output_config.effort: low|medium|high|xhigh|max
+    max_tokens: 4096
+    max_rounds: 8
+    timeout_s: 60
+    max_retries: 2                       # SDK-level retries for 408/409/429/5xx/connection errors
+    pricing: null                        # optional {input_per_mtok: .., output_per_mtok: ..} for cost ESTIMATES
+    budget: {max_total_tokens: 2000000, max_cost_usd: null, max_requests: 5000}
+    prompt_version: "single-v1"
+  llm_two_stage:
+    type: llm
+    mode: two_stage
+    provider: anthropic
+    model_env: ROBOT_EVAL_LLM_MODEL
+    effort: null
+    max_tokens: 4096
+    max_rounds: 8
+    timeout_s: 60
+    max_retries: 2
+    pricing: null
+    budget: {max_total_tokens: 2000000, max_cost_usd: null, max_requests: 5000}
+    prompt_version: "two-stage-v1"

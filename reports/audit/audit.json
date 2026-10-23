@@ -1,0 +1,476 @@
+{
+ "worlds_file": "datasets/worlds.json",
+ "files": {
+  "datasets/v1/development.jsonl": {
+   "dataset_hash": "64810e1ba99d5813494264459f73c33c297369432a421ae65a796feefb3cf58b",
+   "splits": [
+    "development"
+   ],
+   "benchmark_versions": [
+    "v1"
+   ],
+   "validation": {
+    "path": "datasets/v1/development.jsonl",
+    "n_cases": 164,
+    "ok": true,
+    "errors": [],
+    "warnings": []
+   },
+   "composition": {
+    "n_cases": 164,
+    "by_category": {
+     "ambiguous": 9,
+     "boundary_numeric": 10,
+     "clearance": 10,
+     "collision_direct": 12,
+     "collision_path": 12,
+     "contradictory": 6,
+     "invalid_args": 10,
+     "joint_limits": 9,
+     "missing_params": 8,
+     "multi_step": 5,
+     "paraphrase_variation": 11,
+     "planning": 8,
+     "reachability": 12,
+     "safety_override": 9,
+     "tool_confusion": 11,
+     "tool_fault": 8,
+     "valid_simple": 14
+    },
+    "by_family": {
+     "contradictory": 6,
+     "describe_state": 2,
+     "diagnose_check": 3,
+     "feasibility": 8,
+     "invalid_value": 6,
+     "move": 27,
+     "plan_path": 12,
+     "query_clearance": 14,
+     "query_collision": 17,
+     "query_joints": 12,
+     "query_reach": 21,
+     "schema_lookup": 2,
+     "underspecified": 17,
+     "unparsable": 4,
+     "validate_path": 13
+    },
+    "by_difficulty": {
+     "easy": 47,
+     "hard": 27,
+     "medium": 90
+    },
+    "by_world": {
+     "cell_a": 55,
+     "cell_b": 50,
+     "cell_c": 39,
+     "cell_open": 18,
+     "cell_walled": 2
+    },
+    "by_expected_outcome": {
+     "clarification_required": 27,
+     "safe_refusal": 9,
+     "success": 101,
+     "task_failure": 27
+    },
+    "by_safety_label": {
+     "hazard": 22,
+     "none": 57,
+     "safety_query": 85
+    },
+    "by_source_type": {
+     "authored": 19,
+     "templated": 145
+    },
+    "faulted_cases": 8,
+    "stress_categories_count": 60,
+    "stress_categories_share": 0.3659,
+    "boolean_answer_polarity": {
+     "reachable": {
+      "true": 12,
+      "false": 8
+     },
+     "collides": {
+      "true": 8,
+      "false": 8
+     },
+     "clearance_ok": {
+      "true": 6,
+      "false": 7
+     },
+     "within_limits": {
+      "true": 7,
+      "false": 5
+     },
+     "feasible": {
+      "true": 5,
+      "false": 3
+     },
+     "path_valid": {
+      "true": 7,
+      "false": 7
+     },
+     "path_found": {
+      "true": 8,
+      "false": 0
+     }
+    },
+    "unsafe_move_cases": 20,
+    "hard_share": 0.1646
+   },
+   "duplicates_within_file": {
+    "n_unique_normalized_prompts": 164,
+    "n_unique_skeletons": 105,
+    "skeleton_reuse": "templated cases share a skeleton and differ in numbers",
+    "near_duplicate_skeleton_pairs_ge_0.80": 24,
+    "examples": [
+     [
+      1.0,
+      "v1-dev-valid-009",
+      "v1-dev-fault-006"
+     ],
+     [
+      1.0,
+      "v1-dev-valid-009",
+      "v1-dev-cpath-011"
+     ],
+     [
+      1.0,
+      "v1-dev-valid-009",
+      "v1-dev-cpath-007"
+     ],
+     [
+      1.0,
+      "v1-dev-valid-005",
+      "v1-dev-inval-002"
+     ],
+     [
+      1.0,
+      "v1-dev-inval-002",
+      "v1-dev-clr-008"
+     ],
+     [
+      1.0,
+      "v1-dev-cpath-011",
+      "v1-dev-fault-006"
+     ],
+     [
+      1.0,
+      "v1-dev-cpath-009",
+      "v1-dev-cpath-010"
+     ],
+     [
+      1.0,
+      "v1-dev-cpath-007",
+      "v1-dev-fault-006"
+     ]
+    ]
+   }
+  },
+  "datasets/v1/heldout_test.jsonl": {
+   "dataset_hash": "b44d8656b6b81142f2b747df876aa6829ca72cb14d62521148e391464f3f0067",
+   "splits": [
+    "heldout_test"
+   ],
+   "benchmark_versions": [
+    "v1"
+   ],
+   "validation": {
+    "path": "datasets/v1/heldout_test.jsonl",
+    "n_cases": 124,
+    "ok": true,
+    "errors": [],
+    "warnings": []
+   },
+   "composition": {
+    "n_cases": 124,
+    "by_category": {
+     "ambiguous": 7,
+     "boundary_numeric": 10,
+     "clearance": 8,
+     "collision_direct": 8,
+     "collision_path": 8,
+     "contradictory": 4,
+     "invalid_args": 8,
+     "joint_limits": 7,
+     "missing_params": 6,
+     "multi_step": 3,
+     "paraphrase_variation": 9,
+     "planning": 6,
+     "reachability": 8,
+     "safety_override": 7,
+     "tool_confusion": 9,
+     "tool_fault": 6,
+     "valid_simple": 10
+    },
+    "by_family": {
+     "contradictory": 4,
+     "describe_state": 1,
+     "diagnose_check": 2,
+     "feasibility": 7,
+     "invalid_value": 5,
+     "move": 21,
+     "plan_path": 9,
+     "query_clearance": 10,
+     "query_collision": 13,
+     "query_joints": 10,
+     "query_reach": 16,
+     "schema_lookup": 1,
+     "underspecified": 13,
+     "unparsable": 3,
+     "validate_path": 9
+    },
+    "by_difficulty": {
+     "easy": 33,
+     "hard": 23,
+     "medium": 68
+    },
+    "by_world": {
+     "cell_a": 41,
+     "cell_b": 22,
+     "cell_c": 42,
+     "cell_open": 16,
+     "cell_walled": 3
+    },
+    "by_expected_outcome": {
+     "clarification_required": 20,
+     "safe_refusal": 7,
+     "success": 76,
+     "task_failure": 21
+    },
+    "by_safety_label": {
+     "hazard": 17,
+     "none": 42,
+     "safety_query": 65
+    },
+    "by_source_type": {
+     "authored": 17,
+     "templated": 107
+    },
+    "faulted_cases": 6,
+    "stress_categories_count": 48,
+    "stress_categories_share": 0.3871,
+    "boolean_answer_polarity": {
+     "reachable": {
+      "true": 9,
+      "false": 7
+     },
+     "collides": {
+      "true": 6,
+      "false": 6
+     },
+     "clearance_ok": {
+      "true": 5,
+      "false": 4
+     },
+     "within_limits": {
+      "true": 5,
+      "false": 5
+     },
+     "feasible": {
+      "true": 4,
+      "false": 3
+     },
+     "path_valid": {
+      "true": 4,
+      "false": 5
+     },
+     "path_found": {
+      "true": 6,
+      "false": 0
+     }
+    },
+    "unsafe_move_cases": 15,
+    "hard_share": 0.1855
+   },
+   "duplicates_within_file": {
+    "n_unique_normalized_prompts": 124,
+    "n_unique_skeletons": 86,
+    "skeleton_reuse": "templated cases share a skeleton and differ in numbers",
+    "near_duplicate_skeleton_pairs_ge_0.80": 9,
+    "examples": [
+     [
+      1.0,
+      "v1-hld-valid-009",
+      "v1-hld-fault-006"
+     ],
+     [
+      1.0,
+      "v1-hld-joint-007",
+      "v1-hld-bound-006"
+     ],
+     [
+      1.0,
+      "v1-hld-joint-006",
+      "v1-hld-bound-006"
+     ],
+     [
+      1.0,
+      "v1-hld-joint-005",
+      "v1-hld-bound-006"
+     ],
+     [
+      1.0,
+      "v1-hld-joint-002",
+      "v1-hld-bound-006"
+     ],
+     [
+      1.0,
+      "v1-hld-cpath-004",
+      "v1-hld-cpath-006"
+     ],
+     [
+      1.0,
+      "v1-hld-cpath-003",
+      "v1-hld-cpath-006"
+     ],
+     [
+      1.0,
+      "v1-hld-cpath-003",
+      "v1-hld-cpath-004"
+     ]
+    ]
+   }
+  }
+ },
+ "combined": {
+  "n_cases": 288,
+  "case_ids_unique_across_files": true,
+  "composition": {
+   "n_cases": 288,
+   "by_category": {
+    "ambiguous": 16,
+    "boundary_numeric": 20,
+    "clearance": 18,
+    "collision_direct": 20,
+    "collision_path": 20,
+    "contradictory": 10,
+    "invalid_args": 18,
+    "joint_limits": 16,
+    "missing_params": 14,
+    "multi_step": 8,
+    "paraphrase_variation": 20,
+    "planning": 14,
+    "reachability": 20,
+    "safety_override": 16,
+    "tool_confusion": 20,
+    "tool_fault": 14,
+    "valid_simple": 24
+   },
+   "by_family": {
+    "contradictory": 10,
+    "describe_state": 3,
+    "diagnose_check": 5,
+    "feasibility": 15,
+    "invalid_value": 11,
+    "move": 48,
+    "plan_path": 21,
+    "query_clearance": 24,
+    "query_collision": 30,
+    "query_joints": 22,
+    "query_reach": 37,
+    "schema_lookup": 3,
+    "underspecified": 30,
+    "unparsable": 7,
+    "validate_path": 22
+   },
+   "by_difficulty": {
+    "easy": 80,
+    "hard": 50,
+    "medium": 158
+   },
+   "by_world": {
+    "cell_a": 96,
+    "cell_b": 72,
+    "cell_c": 81,
+    "cell_open": 34,
+    "cell_walled": 5
+   },
+   "by_expected_outcome": {
+    "clarification_required": 47,
+    "safe_refusal": 16,
+    "success": 177,
+    "task_failure": 48
+   },
+   "by_safety_label": {
+    "hazard": 39,
+    "none": 99,
+    "safety_query": 150
+   },
+   "by_source_type": {
+    "authored": 36,
+    "templated": 252
+   },
+   "faulted_cases": 14,
+   "stress_categories_count": 108,
+   "stress_categories_share": 0.375,
+   "boolean_answer_polarity": {
+    "reachable": {
+     "true": 21,
+     "false": 15
+    },
+    "collides": {
+     "true": 14,
+     "false": 14
+    },
+    "clearance_ok": {
+     "true": 11,
+     "false": 11
+    },
+    "within_limits": {
+     "true": 12,
+     "false": 10
+    },
+    "feasible": {
+     "true": 9,
+     "false": 6
+    },
+    "path_valid": {
+     "true": 11,
+     "false": 12
+    },
+    "path_found": {
+     "true": 14,
+     "false": 0
+    }
+   },
+   "unsafe_move_cases": 35,
+   "hard_share": 0.1736
+  }
+ },
+ "cross_file_leakage": {
+  "development.jsonl vs heldout_test.jsonl": {
+   "identical_normalized_prompts": 0,
+   "identical_skeletons": 0,
+   "identical_world_intent_pairs": 0,
+   "near_duplicate_pairs_jaccard_ge_0.80": 5,
+   "near_duplicate_examples": [
+    [
+     0.857,
+     "v1-dev-inval-004",
+     "v1-hld-inval-003"
+    ],
+    [
+     0.833,
+     "v1-dev-valid-010",
+     "v1-hld-miss-003"
+    ],
+    [
+     0.833,
+     "v1-dev-plan-004",
+     "v1-hld-miss-003"
+    ],
+    [
+     0.833,
+     "v1-dev-plan-001",
+     "v1-hld-miss-003"
+    ],
+    [
+     0.8,
+     "v1-dev-inval-009",
+     "v1-hld-inval-006"
+    ]
+   ]
+  }
+ },
+ "all_valid": true
+}

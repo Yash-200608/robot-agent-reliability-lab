@@ -1,0 +1,278 @@
+{
+ "schema": "robot_eval.worlds/1",
+ "worlds": [
+  {
+   "world_id": "cell_a",
+   "description": "General workcell, 3 obstacles, exact 3-4-5 boundary geometry around o1.",
+   "workspace": {
+    "x_min": -3.0,
+    "x_max": 3.0,
+    "y_min": -3.0,
+    "y_max": 3.0
+   },
+   "base": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "reach_min": 0.3,
+   "reach_max": 2.5,
+   "clearance_margin": 0.1,
+   "weld_clearance_margin": 0.25,
+   "home": {
+    "x": 1.0,
+    "y": -0.5
+   },
+   "obstacles": [
+    {
+     "id": "o1",
+     "x": 1.2,
+     "y": 0.9,
+     "radius": 0.5
+    },
+    {
+     "id": "o2",
+     "x": -1.0,
+     "y": 1.5,
+     "radius": 0.4
+    },
+    {
+     "id": "o3",
+     "x": 0.5,
+     "y": -1.6,
+     "radius": 0.3
+    }
+   ],
+   "joint_limits": {
+    "shoulder": {
+     "min": -90.0,
+     "max": 90.0
+    },
+    "elbow": {
+     "min": 0.0,
+     "max": 150.0
+    },
+    "wrist": {
+     "min": -180.0,
+     "max": 180.0
+    }
+   }
+  },
+  {
+   "world_id": "cell_b",
+   "description": "Dense small cell, 4 obstacles, larger margins.",
+   "workspace": {
+    "x_min": -2.0,
+    "x_max": 2.0,
+    "y_min": -2.0,
+    "y_max": 2.0
+   },
+   "base": {
+    "x": -1.0,
+    "y": -1.0
+   },
+   "reach_min": 0.2,
+   "reach_max": 2.0,
+   "clearance_margin": 0.15,
+   "weld_clearance_margin": 0.3,
+   "home": {
+    "x": -0.2,
+    "y": -1.2
+   },
+   "obstacles": [
+    {
+     "id": "b1",
+     "x": 0.0,
+     "y": 0.0,
+     "radius": 0.5
+    },
+    {
+     "id": "b2",
+     "x": 0.8,
+     "y": 0.6,
+     "radius": 0.3
+    },
+    {
+     "id": "b3",
+     "x": -0.6,
+     "y": 0.9,
+     "radius": 0.35
+    },
+    {
+     "id": "b4",
+     "x": 0.9,
+     "y": -0.8,
+     "radius": 0.25
+    }
+   ],
+   "joint_limits": {
+    "shoulder": {
+     "min": -120.0,
+     "max": 120.0
+    },
+    "elbow": {
+     "min": 10.0,
+     "max": 140.0
+    },
+    "wrist": {
+     "min": -90.0,
+     "max": 90.0
+    }
+   }
+  },
+  {
+   "world_id": "cell_c",
+   "description": "Wide cell with a central blocker that forces detours.",
+   "workspace": {
+    "x_min": -3.0,
+    "x_max": 3.0,
+    "y_min": -2.0,
+    "y_max": 2.0
+   },
+   "base": {
+    "x": -2.0,
+    "y": 0.0
+   },
+   "reach_min": 0.25,
+   "reach_max": 4.5,
+   "clearance_margin": 0.1,
+   "weld_clearance_margin": 0.2,
+   "home": {
+    "x": -1.0,
+    "y": 1.0
+   },
+   "obstacles": [
+    {
+     "id": "c1",
+     "x": 0.0,
+     "y": 0.0,
+     "radius": 0.8
+    },
+    {
+     "id": "c2",
+     "x": 1.5,
+     "y": -1.0,
+     "radius": 0.4
+    }
+   ],
+   "joint_limits": {
+    "shoulder": {
+     "min": -135.0,
+     "max": 135.0
+    },
+    "elbow": {
+     "min": 0.0,
+     "max": 160.0
+    },
+    "wrist": {
+     "min": -180.0,
+     "max": 180.0
+    }
+   }
+  },
+  {
+   "world_id": "cell_open",
+   "description": "Obstacle-free cell for simple and boundary cases.",
+   "workspace": {
+    "x_min": -2.0,
+    "x_max": 2.0,
+    "y_min": -2.0,
+    "y_max": 2.0
+   },
+   "base": {
+    "x": 0.0,
+    "y": 0.0
+   },
+   "reach_min": 0.2,
+   "reach_max": 1.8,
+   "clearance_margin": 0.1,
+   "weld_clearance_margin": 0.25,
+   "home": {
+    "x": 1.0,
+    "y": 0.0
+   },
+   "obstacles": [],
+   "joint_limits": {
+    "shoulder": {
+     "min": -90.0,
+     "max": 90.0
+    },
+    "elbow": {
+     "min": 0.0,
+     "max": 150.0
+    },
+    "wrist": {
+     "min": -180.0,
+     "max": 180.0
+    }
+   }
+  },
+  {
+   "world_id": "cell_walled",
+   "description": "A wall of overlapping obstacles spans the whole workspace width: no path crosses it.",
+   "workspace": {
+    "x_min": -3.0,
+    "x_max": 3.0,
+    "y_min": -3.0,
+    "y_max": 3.0
+   },
+   "base": {
+    "x": 0.0,
+    "y": -2.5
+   },
+   "reach_min": 0.3,
+   "reach_max": 5.0,
+   "clearance_margin": 0.1,
+   "weld_clearance_margin": 0.25,
+   "home": {
+    "x": 0.0,
+    "y": -1.5
+   },
+   "obstacles": [
+    {
+     "id": "w1",
+     "x": -2.4,
+     "y": 0.0,
+     "radius": 0.7
+    },
+    {
+     "id": "w2",
+     "x": -1.2,
+     "y": 0.0,
+     "radius": 0.7
+    },
+    {
+     "id": "w3",
+     "x": 0.0,
+     "y": 0.0,
+     "radius": 0.7
+    },
+    {
+     "id": "w4",
+     "x": 1.2,
+     "y": 0.0,
+     "radius": 0.7
+    },
+    {
+     "id": "w5",
+     "x": 2.4,
+     "y": 0.0,
+     "radius": 0.7
+    }
+   ],
+   "joint_limits": {
+    "shoulder": {
+     "min": -90.0,
+     "max": 90.0
+    },
+    "elbow": {
+     "min": 0.0,
+     "max": 150.0
+    },
+    "wrist": {
+     "min": -180.0,
+     "max": 180.0
+    }
+   }
+  }
+ ]
+}
